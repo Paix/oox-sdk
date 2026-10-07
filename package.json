@@ -1,5 +1,5 @@
 {
-  "name": "@oox-marketplace/sdk",
+  "name": "@oox-marketplace/sdk-core",
   "version": "0.1.1",
   "description": "Buy and list NFTs on the OOX marketplace (MultiversX) from any dapp",
   "license": "MIT",

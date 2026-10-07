@@ -1,4 +1,4 @@
-# @oox-marketplace/sdk
+# @oox-marketplace/sdk-core
 
 Buy and list NFTs on the [OOX marketplace](https://oox.art) from your own MultiversX dapp.
 
@@ -19,7 +19,7 @@ change price, cancel, end auction.
 ## Install
 
 ```bash
-npm install @oox-marketplace/sdk @multiversx/sdk-core
+npm install @oox-marketplace/sdk-core @multiversx/sdk-core
 ```
 
 `@multiversx/sdk-core` v15 is a peer dependency, so your dapp and the SDK share one copy.
@@ -27,7 +27,7 @@ npm install @oox-marketplace/sdk @multiversx/sdk-core
 ## Quick start
 
 ```ts
-import { OOXClient, formatAmount } from '@oox-marketplace/sdk';
+import { OOXClient, formatAmount } from '@oox-marketplace/sdk-core';
 
 const oox = new OOXClient({ network: 'mainnet', apiKey: process.env.OOX_API_KEY });
 
@@ -78,7 +78,7 @@ quote.breakdown.seller      // net to the seller
 ## Listing
 
 ```ts
-import { deadlineFromDays, parseAmount } from '@oox-marketplace/sdk';
+import { deadlineFromDays, parseAmount } from '@oox-marketplace/sdk-core';
 
 // Fixed price: minBid === maxBid
 const transactions = await oox.prepareListing({
@@ -104,7 +104,7 @@ Which NFTs a wallet can list: `oox.api.getWalletNfts(address)`.
 values you already have, without calling the API. Use it if you index listings yourself.
 
 ```ts
-import { OOXTransactions, NETWORKS } from '@oox-marketplace/sdk';
+import { OOXTransactions, NETWORKS } from '@oox-marketplace/sdk-core';
 
 const tx = new OOXTransactions({ chainId: '1', marketplaceContract: NETWORKS.mainnet.marketplaceContract });
 const buy = await tx.buy({
